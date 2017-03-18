@@ -1,9 +1,7 @@
-const PublicApi = require('./publicApi')();
-const PrivateApi = require('./privateApi')();
 
 const BitBayApi = (options) => {
-  PrivateApi.setPublicKey(options.publicKey);
-  PrivateApi.setSecretKey(options.secretKey);
+  const PublicApi = require('./publicApi')();
+  const PrivateApi = require('./privateApi')(options);
 
   const getTrades = (currency1, currency2) => {
     return PublicApi.makeRequest('trades', currency1, currency2);
