@@ -1,5 +1,4 @@
 const test = require('blue-tape');
-const BitBayApi = require('./index')();
 const PublicApi = require('./publicApi')();
 
 test('missing category argument', t => {

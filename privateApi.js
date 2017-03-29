@@ -5,10 +5,10 @@ const request = require('request-promise');
 const PrivateApi = ({ publicKey, secretKey }) => {
   const apiAddress = 'https://bitbay.net/API/Trading/tradingApi.php';
   const hashFunction = 'sha512';
-  const hmac = crypto.createHash(hashFunction, secretKey);
+  const hmac = crypto.createHmac(hashFunction, secretKey);
 
   const getTimeInSeconds = () => {
-    return new Date().getTime() / 1000;
+    return Math.floor(new Date().getTime() / 1000);
   };
 
   const prepareQuerystring = (params) => {
@@ -18,22 +18,27 @@ const PrivateApi = ({ publicKey, secretKey }) => {
   const getHeaders = (qs) => {
     hmac.update(qs);
 
-    return [
-      `API-Key: ${publicKey}`,
-      `API-Hash: ${hmac.digest('hex')}`,
-    ];
+    const hash = hmac.digest('hex');
+
+    return {
+      'API-Key': publicKey,
+      'API-Hash': hash,
+    };
   };
 
   const makeRequest = (method, params = {}) => {
     params['method'] = method;
     params.moment = getTimeInSeconds();
-    const body = prepareQuerystring(params);
+
+    const qs = Buffer.from(prepareQuerystring(params));
     const headers = getHeaders(qs);
 
-    return request.post(apiAddress, { body, headers });
+    return request.post(apiAddress, { form: params, headers: headers });
   };
 
   return {
     makeRequest,
   };
 }
+
+module.exports = PrivateApi;
