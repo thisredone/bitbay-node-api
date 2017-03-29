@@ -18,11 +18,9 @@ const PrivateApi = ({ publicKey, secretKey }) => {
   const getHeaders = (qs) => {
     hmac.update(qs);
 
-    const hash = hmac.digest('hex');
-
     return {
       'API-Key': publicKey,
-      'API-Hash': hash,
+      'API-Hash': hmac.digest('hex'),
     };
   };
 
