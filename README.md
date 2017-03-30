@@ -18,7 +18,7 @@ bitbay.getTrades('BTC', 'USD')
 
 ## API methods
 
-`getTrades(currency1: String, currency2: String = 'USD')` - Get latest trades.
+#### `getTrades(currency1: String, currency2: String = 'USD')` - Get latest trades.
 
 Returns an array of JSON objects, ordered from oldest to newest, maximum is 50, that means default request returns 50 oldest transactions in specified currency. Second currency defaults to USD.
 
@@ -43,7 +43,7 @@ Returns an array of JSON objects, ordered from oldest to newest, maximum is 50, 
 ]
 ```
 
-`getOrderbook(currency1: String, currency2: String = 'USD')` - Get orders from stock market.
+#### `getOrderbook(currency1: String, currency2: String = 'USD')` - Get orders from stock market.
 
 Returns an object which consists of 2 keys: bids and asks, which are sequentially arrays of purchase and sell orders.
 Units of this arrays are also arrays and consist of 2 elements. The first one is rate, and second is an amount of cryptocurrency in that order.
@@ -63,7 +63,7 @@ Units of this arrays are also arrays and consist of 2 elements. The first one is
 }
 ```
 
-`getMarket(currency1: String, currency2: String = 'USD')` - Get orders from stock market and latest transactions.
+#### `getMarket(currency1: String, currency2: String = 'USD')` - Get orders from stock market and latest transactions.
 
 Request which combines two above listed methods. Returns an object, which contains keys bids, asks and transactions.
 This method works as in above examples.
@@ -107,7 +107,7 @@ This request can also have "since" parameter, which affect to transactions array
 }
 ```
 
-`getTicker(currency1: String, currency2: String = 'USD')` - Gets basic statistics
+#### `getTicker(currency1: String, currency2: String = 'USD')` - Gets basic statistics
 
 Returns object where:
 
@@ -135,7 +135,7 @@ Returns object where:
 }
 ```
 
-`getAll(currency1: String, currency2: String = 'USD')` - Gets all above information combined.
+#### `getAll(currency1: String, currency2: String = 'USD')` - Gets all above information combined.
 
 **Example response:**
 
