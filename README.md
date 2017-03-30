@@ -34,11 +34,11 @@ Returns an array of JSON objects, ordered from oldest to newest, maximum is 50, 
     "tid": "5011"
   },
   {
-    "date":1400242310,
-    "price":447.9,
-    "type":"buy",
-    "amount":0.158423,
-    "tid":"5123"
+    "date": 1400242310,
+    "price": 447.9,
+    "type": "buy",
+    "amount" :0.158423,
+    "tid": "5123"
   }
 ]
 ```
@@ -97,11 +97,11 @@ This request can also have "since" parameter, which affect to transactions array
       "tid": "5011"
     },
     {
-      "date":1400242310,
-      "price":447.9,
-      "type":"buy",
-      "amount":0.158423,
-      "tid":"5123"
+      "date": 1400242310,
+      "price": 447.9,
+      "type": "buy",
+      "amount": 0.158423,
+      "tid": "5123"
     }
   ]
 }
@@ -173,11 +173,11 @@ Returns object where:
       "tid": "5011"
     },
     {
-      "date":1400242310,
-      "price":447.9,
-      "type":"buy",
-      "amount":0.158423,
-      "tid":"5123"
+      "date": 1400242310,
+      "price": 447.9,
+      "type": "buy",
+      "amount": 0.158423,
+      "tid": "5123"
     }
   ]
 }
