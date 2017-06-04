@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/ezpn/bitbay-node-api.svg?branch=master)](https://travis-ci.org/ezpn/bitbay-node-api)
 # BitBay Node.js Trading API
 Unofficial Bitbay.net cryptocurrency exchange api in JavaScript.
 
