@@ -1,5 +1,5 @@
 const test = require('blue-tape');
-const PublicApi = require('./publicApi')();
+const PublicApi = require('../publicApi')();
 
 test('missing category argument', t => {
   return t.shouldFail(PublicApi.makeRequest(), Error);
