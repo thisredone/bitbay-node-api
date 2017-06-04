@@ -20,7 +20,7 @@ bitbay.getTrades('BTC', 'USD')
 
 #### `getTrades(currency1: String, currency2: String = 'USD')` - Get latest trades.
 
-Returns an array of JSON objects, ordered from oldest to newest, maximum is 50, that means default request returns 50 oldest transactions in specified currency. Second currency defaults to USD.
+Returns an array of JSON objects, ordered from oldest to newest, maximum is 50, that means default request returns 50 oldest transactions in specified currency. Second currency defaults to USD. 
 
 **Example response:**
 
