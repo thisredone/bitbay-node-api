@@ -30,7 +30,7 @@ const PrivateApi = ({ publicKey, secretKey }) => {
     const qs = Buffer.from(prepareQuerystring(params));
     const headers = getHeaders(qs);
 
-    return request.post(apiAddress, { form: params, headers: headers });
+    return request.post(apiAddress, { form: params, headers: headers }).then(JSON.parse);
   };
 
   return {
