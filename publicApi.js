@@ -30,7 +30,7 @@ const PublicApi = (currencies) => {
 
     const address = buildAddress(category, currency1, currency2);
 
-    return request.get(address);
+    return request.get(address).then(JSON.parse);
   };
 
   return {
